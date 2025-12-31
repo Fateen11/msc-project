@@ -1,218 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photo Gallery | Milestone School & College</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Photo Gallery | Milestone School & College</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary: #1a365d;
-      --secondary: #2d5a87;
-      --gold: #d69e2e;
-      --light-bg: #f7fafc;
-      --text-light: #6b7280;
-      --shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
+<style>
+:root{
+  --primary:#1a365d;
+  --secondary:#2d5a87;
+  --gold:#d69e2e;
+  --light-bg:#f7fafc;
+  --text-light:#6b7280;
+  --shadow:0 10px 25px rgba(0,0,0,.08);
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+*{margin:0;padding:0;box-sizing:border-box}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--light-bg);
-      color: #1f2937;
-      padding-top: 90px;
-    }
+body{
+  font-family:Poppins,sans-serif;
+  background:var(--light-bg);
+  color:#1f2937;
+  padding-top:88px;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-    }
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
 
-    /* ================= NAVBAR ================= */
+a{text-decoration:none}
 
-    .header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(26, 54, 93, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-    }
+/* ===== HEADER ===== */
+.header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(26,54,93,.95);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
 
-    .navbar {
-      padding: 1rem 0;
-    }
+.navbar{padding:1rem 0}
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .nav-logo h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: white;
-      font-weight: 700;
-    }
+.nav-logo h1{
+  font-family:"Playfair Display",serif;
+  font-size:1.6rem;
+  color:white;
+}
 
-    .nav-logo span {
-      font-size: 0.9rem;
-      color: var(--gold);
-      font-weight: 300;
-    }
+.nav-logo span{
+  font-size:.85rem;
+  color:var(--gold);
+}
 
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
+/* MENU */
+.nav-menu{
+  display:flex;
+  list-style:none;
+  gap:2rem;
+}
 
-    .nav-link {
-      color: white;
-      text-decoration: none;
-      position: relative;
-    }
+.nav-link{
+  color:white;
+  position:relative;
+}
 
-    .nav-link:hover {
-      color: var(--gold);
-    }
+.nav-link:hover{color:var(--gold)}
 
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: var(--gold);
-      transition: width 0.3s ease;
-    }
+.menu-toggle{
+  display:none;
+  font-size:1.8rem;
+  color:white;
+  cursor:pointer;
+}
 
-    .nav-link:hover::after {
-      width: 100%;
-    }
+/* ===== MOBILE NAV ===== */
+@media(max-width:768px){
+  body{padding-top:80px}
 
-    /* ================= HERO ================= */
+  .menu-toggle{display:block}
 
-    .page-hero {
-      background: linear-gradient(135deg, #1a365d, #2d5a87);
-      color: white;
-      text-align: center;
-      padding: 6rem 0 4rem;
-    }
+  .nav-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#1a365d;
+    flex-direction:column;
+    align-items:center;
+    padding:1.6rem 0;
+    gap:1.4rem;
+    display:none;
+  }
 
-    .page-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 0.6rem;
-    }
+  .nav-menu.active{display:flex}
+}
 
-    .page-hero p {
-      opacity: 0.9;
-      max-width: 720px;
-      margin: auto;
-    }
+/* ===== HERO ===== */
+.page-hero{
+  background:linear-gradient(135deg,#1a365d,#2d5a87);
+  color:white;
+  text-align:center;
+  padding:6rem 0 4rem;
+}
 
-    /* ================= GALLERY ================= */
+.page-hero h1{
+  font-family:"Playfair Display",serif;
+  font-size:3rem;
+  margin-bottom:.8rem;
+}
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.2rem;
-      margin: 4.5rem 0 5rem;
-    }
+.page-hero p{
+  opacity:.9;
+  max-width:720px;
+  margin:auto;
+}
 
-    .gallery-item {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s ease;
-    }
+/* EXTRA SPACE ON MOBILE (THIS WAS YOUR ISSUE) */
+@media(max-width:768px){
+  .page-hero{
+    padding:7rem 1rem 4.5rem;
+  }
+  .page-hero h1{
+    font-size:2.3rem;
+  }
+}
 
-    .gallery-item:hover {
-      transform: translateY(-6px);
-    }
+/* ===== GALLERY ===== */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2.2rem;
+  margin:4.5rem 0 5rem;
+}
 
-    /* Image wrapper */
-    .gallery-img {
-      width: 100%;
-      height: 210px;
-      background: linear-gradient(135deg, #cbd5e1, #e5e7eb);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+.gallery-item{
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:transform .3s ease;
+}
 
-    /* Actual image */
-    .gallery-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+.gallery-item:hover{
+  transform:translateY(-6px);
+}
 
-    /* Caption */
-    .gallery-caption {
-      padding: 1.2rem 1.3rem 1.4rem;
-    }
+.gallery-img{
+  height:210px;
+  overflow:hidden;
+}
 
-    .gallery-caption h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      margin-bottom: 0.3rem;
-      color: var(--primary);
-    }
+.gallery-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    .gallery-caption p {
-      font-size: 0.85rem;
-      color: var(--text-light);
-    }
+.gallery-caption{
+  padding:1.2rem 1.3rem 1.4rem;
+}
 
-    /* ================= FOOTER ================= */
+.gallery-caption h3{
+  font-family:"Playfair Display",serif;
+  font-size:1.1rem;
+  color:var(--primary);
+  margin-bottom:.3rem;
+}
 
-    footer {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 1.5rem 0;
-      font-size: 0.85rem;
-    }
+.gallery-caption p{
+  font-size:.85rem;
+  color:var(--text-light);
+}
 
-    /* ================= RESPONSIVE ================= */
-
-    @media (max-width: 768px) {
-      .page-hero h1 {
-        font-size: 2.2rem;
-      }
-    }
-    a{
-        text-decoration: none;
-    }
-  </style>
+/* ===== FOOTER ===== */
+footer{
+  background:var(--primary);
+  color:white;
+  text-align:center;
+  padding:1.5rem 0;
+  font-size:.85rem;
+}
+</style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
+<!-- HEADER -->
 <header class="header">
   <nav class="navbar">
     <div class="container nav-container">
 
       <div class="nav-logo">
         <h1>Milestone School & College</h1>
-        <span>Mohamadpur : Senior Section</span>
+        <span>Mohammadpur · Senior Section</span>
       </div>
+
+      <div class="menu-toggle" id="menuToggle">☰</div>
 
       <ul class="nav-menu">
         <li><a href="index.html" class="nav-link">Home</a></li>
@@ -224,6 +218,7 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="page-hero">
   <div class="container">
     <h1>Photo Gallery</h1>
@@ -234,89 +229,83 @@
   </div>
 </section>
 
+<!-- GALLERY -->
 <section class="container">
   <div class="gallery-grid">
 
     <a href="photothumbs.html">
-        <div class="gallery-item">
-      <div class="gallery-img">
-        <img src="images/1.jpg" alt="Senior Section Campus">
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="images/1.jpg"></div>
+        <div class="gallery-caption">
+          <h3>Senior Section Campus</h3>
+          <p>Academic building and surroundings</p>
+        </div>
       </div>
-      <div class="gallery-caption">
-        <h3>Senior Section Campus</h3>
-        <p>Academic building and surroundings</p>
-      </div>
-    </div>
     </a>
 
     <a href="photothumbs.html">
-    <div class="gallery-item">
-      <div class="gallery-img">
-        <img src="images/2.jpg" alt="Annual Cultural Program">
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="images/2.jpg"></div>
+        <div class="gallery-caption">
+          <h3>Annual Cultural Program</h3>
+          <p>Students showcasing creativity and talent</p>
+        </div>
       </div>
-      <div class="gallery-caption">
-        <h3>Annual Cultural Program</h3>
-        <p>Students showcasing creativity and talent</p>
-      </div>
-    </div>        
     </a>
 
     <a href="photothumbs.html">
-    <div class="gallery-item">
-      <div class="gallery-img">
-        <img src="images/3.jpg" alt="Academic Achievement">
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="images/3.jpg"></div>
+        <div class="gallery-caption">
+          <h3>Academic Excellence</h3>
+          <p>Awards and recognitions ceremony</p>
+        </div>
       </div>
-      <div class="gallery-caption">
-        <h3>Academic Excellence</h3>
-        <p>Awards and recognitions ceremony</p>
-      </div>
-    </div>        
     </a>
 
     <a href="photothumbs.html">
-    <div class="gallery-item">
-      <div class="gallery-img">
-        <img src="images/4.jpg" alt="Interactive Classroom">
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="images/4.jpg"></div>
+        <div class="gallery-caption">
+          <h3>Interactive Classrooms</h3>
+          <p>Focused and engaging learning environment</p>
+        </div>
       </div>
-      <div class="gallery-caption">
-        <h3>Interactive Classrooms</h3>
-        <p>Focused and engaging learning environment</p>
-      </div>
-    </div>        
     </a>
 
     <a href="photothumbs.html">
-    <div class="gallery-item">
-      <div class="gallery-img">
-        <img src="images/5.jpg" alt="Science Fair">
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="images/5.jpg"></div>
+        <div class="gallery-caption">
+          <h3>Science Fair</h3>
+          <p>Innovation, research, and student projects</p>
+        </div>
       </div>
-      <div class="gallery-caption">
-        <h3>Science Fair</h3>
-        <p>Innovation, research, and student projects</p>
-      </div>
-    </div>        
     </a>
 
     <a href="photothumbs.html">
-    <div class="gallery-item">
-      <div class="gallery-img">
-        <img src="images/6.jpg" alt="School Library">
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="images/6.jpg"></div>
+        <div class="gallery-caption">
+          <h3>Student Activities</h3>
+          <p>Everyday moments from classes and interactions</p>
+        </div>
       </div>
-      <div class="gallery-caption">
-        <h3>Student Activities</h3>
-        <p>Everyday moments from classes, activities, and student interactions</p>
-      </div>
-    </div>
-
     </a>
 
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  © 2026 Milestone School & College Mohamadpur. All rights reserved.
+  © 2026 Milestone School & College Mohammadpur. All rights reserved.
 </footer>
+
+<script>
+/* MOBILE MENU */
+const menuToggle=document.getElementById("menuToggle");
+const navMenu=document.querySelector(".nav-menu");
+menuToggle.onclick=()=>navMenu.classList.toggle("active");
+</script>
 
 </body>
 </html>
