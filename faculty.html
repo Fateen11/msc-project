@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet the Faculty | Milestone School & College</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1a365d;
+      --secondary: #2d5a87;
+      --gold: #d69e2e;
+      --light-bg: #f7fafc;
+      --text-light: #6b7280;
+      --shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: #1f2937;
+      padding-top: 90px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background:  rgb(26, 54, 93);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .navbar {
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .nav-logo span {
+      font-size: 0.9rem;
+      color: var(--gold);
+      font-weight: 300;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link:hover {
+      color: var(--gold);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* ================= HERO ================= */
+
+    .page-hero {
+      background-image: url("bg1.png");
+      color: white;
+      padding: 6rem 0 4.5rem;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .page-hero p {
+      font-size: 1.05rem;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* ================= SEARCH ================= */
+
+    .search-wrapper {
+      margin: 4rem auto 3rem;
+      text-align: center;
+    }
+
+    .search-wrapper input {
+      width: 100%;
+      max-width: 360px;
+      padding: 0.7rem 1.2rem;
+      border-radius: 30px;
+      border: 1px solid #ddd;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+      box-shadow: var(--shadow);
+    }
+
+    /* ================= FACULTY GRID ================= */
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 5rem;
+    }
+
+    .faculty-card {
+      background: white;
+      padding: 2.3rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .faculty-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .faculty-name {
+      font-family: 'Poppins', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .faculty-role {
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .faculty-subject {
+      font-size: 0.88rem;
+      color: var(--text-light);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 0.85rem;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="header">
+  <nav class="navbar">
+    <div class="container nav-container">
+
+      <div class="nav-logo">
+        <h1>Milestone School & College</h1>
+        <span>Mohamadpur : Senior Section</span>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#academics" class="nav-link">Academics</a></li>
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Meet the Faculty</h1>
+    <p>
+      Our senior section is guided by a team of experienced and dedicated teachers,
+      committed to academic excellence and student development.
+    </p>
+  </div>
+</section>
+
+<!-- FACULTY SECTION -->
+<section class="container">
+
+  <!-- Search -->
+  <div class="search-wrapper">
+    <input type="text" id="searchInput" placeholder="Search by teacher name or subject...">
+  </div>
+
+  <!-- Grid -->
+  <div class="faculty-grid" id="facultyGrid">
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-01</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">Bangla 1st & 2nd Paper</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-02</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">English Language & Literature</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-03</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">General & Higher Mathematics</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-04</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">Physics</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-05</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">Chemistry</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-06</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">Biology</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-07</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">ICT</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-08</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">Bangladesh & Global Studies</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-09</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">Islamic Studies</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-10</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">Agricultural Studies</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-11</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">Home Science</div>
+    </div>
+
+    <div class="faculty-card">
+      <div class="faculty-name">TEACHER-12</div>
+      <div class="faculty-role">Senior Teacher</div>
+      <div class="faculty-subject">Art & Culture</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Milestone School & College Mohamadpur. All rights reserved.
+</footer>
+
+<!-- SEARCH SCRIPT -->
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const cards = document.querySelectorAll('.faculty-card');
+
+  searchInput.addEventListener('keyup', () => {
+    const value = searchInput.value.toLowerCase();
+    cards.forEach(card => {
+      card.style.display =
+        card.innerText.toLowerCase().includes(value) ? 'block' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
