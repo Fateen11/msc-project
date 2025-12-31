@@ -168,6 +168,42 @@ body{
 
 .arrow-left{left:15px}
 .arrow-right{right:15px}
+
+/* ===== MOBILE GALLERY FIX ===== */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .gallery-item {
+    height: auto;
+  }
+
+  .gallery-item img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Disable desktop spans */
+  .big,
+  .wide,
+  .tall {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
 </style>
 </head>
 

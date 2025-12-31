@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notices & Updates | Milestone School & College</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#1a365d;
+  --gold:#d69e2e;
+  --bg:#f3f4f6;
+  --card:#ffffff;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Poppins,sans-serif;
+  background:var(--bg);
+  padding-top:80px;
+}
+
+/* ===== HEADER (SAME STYLE) ===== */
+.header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(26,54,93,.95);
+  z-index:1000;
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:1rem 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.nav-logo h1{
+  font-family:"Playfair Display",serif;
+  font-size:1.5rem;
+  color:white;
+}
+
+.nav-logo span{
+  color:var(--gold);
+  font-size:.85rem;
+}
+
+.nav-menu{
+  list-style:none;
+  display:flex;
+  gap:2rem;
+}
+
+.nav-link{
+  color:white;
+  text-decoration:none;
+}
+
+.nav-link:hover{color:var(--gold)}
+
+.menu-toggle{
+  display:none;
+  font-size:1.8rem;
+  color:white;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  .menu-toggle{display:block}
+  .nav-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#1a365d;
+    flex-direction:column;
+    align-items:center;
+    padding:1.5rem 0;
+    display:none;
+  }
+  .nav-menu.active{display:flex}
+}
+
+/* ===== PAGE TITLE ===== */
+.page-title{
+  max-width:1200px;
+  margin:2.5rem auto 1.5rem;
+  padding:0 20px;
+}
+
+.page-title h2{
+  font-family:"Playfair Display",serif;
+  font-size:2.3rem;
+  color:var(--primary);
+}
+
+.page-title p{
+  color:#444;
+  margin-top:.4rem;
+}
+
+/* ===== NOTICES ===== */
+.notice-container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px 4rem;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.5rem;
+}
+
+.notice-card{
+  background:var(--card);
+  padding:1.5rem;
+  border-radius:8px;
+  border-left:5px solid var(--primary);
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.notice-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:.6rem;
+}
+
+.notice-badge{
+  font-size:.7rem;
+  padding:.25rem .6rem;
+  border-radius:20px;
+  color:white;
+}
+
+.badge-notice{background:#1a365d}
+.badge-update{background:#2f855a}
+.badge-urgent{background:#c53030}
+
+.notice-date{
+  font-size:.75rem;
+  color:#666;
+}
+
+.notice-title{
+  font-weight:600;
+  margin-bottom:.4rem;
+  color:#111;
+}
+
+.notice-text{
+  font-size:.95rem;
+  color:#444;
+  line-height:1.5;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .notice-container{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:#1a365d;
+  color:#ccc;
+  padding:2rem 20px;
+  text-align:center;
+}
+
+.footer span{
+  color:var(--gold);
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <h1>Milestone School & College</h1>
+      <span>Mohammadpur · Senior Section</span>
+    </div>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="index.html#about" class="nav-link">About</a></li>
+      <li><a href="index.html#academics" class="nav-link">Academics</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="page-title">
+  <h2>Notices & Updates</h2>
+  <p>Official announcements and recent updates for students & parents</p>
+</section>
+
+<section class="notice-container">
+
+  <div class="notice-card">
+    <div class="notice-header">
+      <span class="notice-badge badge-notice">NOTICE</span>
+      <span class="notice-date">15 July 2025</span>
+    </div>
+    <div class="notice-title">Class Schedule Adjustment</div>
+    <div class="notice-text">
+      Due to internal academic planning, classes on Sunday will start from 9:00 AM instead of 8:30 AM.
+    </div>
+  </div>
+
+  <div class="notice-card">
+    <div class="notice-header">
+      <span class="notice-badge badge-update">UPDATE</span>
+      <span class="notice-date">12 July 2025</span>
+    </div>
+    <div class="notice-title">Science Fair Registration Open</div>
+    <div class="notice-text">
+      Students of classes VIII–X may register for the annual science fair by submitting their project titles to the class teacher.
+    </div>
+  </div>
+
+  <div class="notice-card">
+    <div class="notice-header">
+      <span class="notice-badge badge-urgent">URGENT</span>
+      <span class="notice-date">10 July 2025</span>
+    </div>
+    <div class="notice-title">ID Card Mandatory</div>
+    <div class="notice-text">
+      All students must carry their school ID cards from Monday. Entry without ID will not be permitted.
+    </div>
+  </div>
+
+  <div class="notice-card">
+    <div class="notice-header">
+      <span class="notice-badge badge-update">UPDATE</span>
+      <span class="notice-date">8 July 2025</span>
+    </div>
+    <div class="notice-title">Exam Result Publication</div>
+    <div class="notice-text">
+      Mid-term examination results will be published on the school notice board and official website.
+    </div>
+  </div>
+
+</section>
+
+<footer class="footer">
+  © 2026 <span>Milestone School & College</span>. All rights reserved.
+</footer>
+
+<script>
+const menuToggle=document.getElementById("menuToggle");
+const navMenu=document.querySelector(".nav-menu");
+menuToggle.onclick=()=>navMenu.classList.toggle("active");
+</script>
+
+</body>
+</html>
